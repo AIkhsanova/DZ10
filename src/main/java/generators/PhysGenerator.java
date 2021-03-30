@@ -26,4 +26,6 @@ public class PhysGenerator implements Generator<Physical> {
     public final Physical buildResponse() {
         return new Physical(age, weight, height);
     }
+
+
 }
