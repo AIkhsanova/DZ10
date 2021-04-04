@@ -1,6 +1,7 @@
 package generators;
 
 
+
 public interface Generator<T> {
 
     void generateParams(int code);
@@ -14,3 +15,5 @@ public interface Generator<T> {
 
 
 }
+
+

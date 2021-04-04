@@ -23,9 +23,9 @@ public class FioGenerator implements Generator<Fio> {
     public final void generateParams(final int code) {
         final int lastNameIndex = getDigitsSum(code);
         final String sex = (lastNameIndex % 2 == 0) ? "f" : "m";
-        setLastNameFromFile(lastNameIndex, sex);
-        setFirstNameFromFile(getDigitsSum(code / 100), sex);
-        setMiddleNameFromFile(getDigitsSum(code % 100), sex);
+        lastName = getLinesFromFile("lastNames_" + sex).get(lastNameIndex);
+        firstName = getLinesFromFile("names_" + sex).get(getDigitsSum(code / 100));
+        middleName = getLinesFromFile("middleNames_" + sex).get(getDigitsSum(code % 100));
     }
 
     @Override
@@ -33,17 +33,5 @@ public class FioGenerator implements Generator<Fio> {
         return new Fio(lastName, firstName, middleName);
     }
 
-
-    private void setLastNameFromFile(final int i, final String sex) {
-        lastName = getLinesFromFile("lastNames_" + sex).get(i);
-    }
-
-    private void setFirstNameFromFile(final int i, final String sex) {
-        firstName = getLinesFromFile("names_" + sex).get(i);
-    }
-
-    private void setMiddleNameFromFile(final int i, final String sex) {
-        middleName = getLinesFromFile("middleNames_" + sex).get(i);
-    }
 }
 

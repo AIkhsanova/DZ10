@@ -57,25 +57,25 @@ public final class Person {
 
         public Builder withInitials() {
 
-            this.fio=new FioGenerator().getParam(intCode,new FioGenerator());
+            this.fio = new FioGenerator().getParam(intCode, new FioGenerator());
 
             return this;
         }
 
 
         public Builder withAppearance() {
-            this.appearance=new AppearanceGenerator().getParam(intCode,new AppearanceGenerator());
+            this.appearance = new AppearanceGenerator().getParam(intCode, new AppearanceGenerator());
             return this;
         }
 
         public Builder withPhysical() {
-            this.physical=new PhysGenerator().getParam(intCode,new PhysGenerator());
+            this.physical = new PhysGenerator().getParam(intCode, new PhysGenerator());
             return this;
         }
 
         public Builder withPhone() {
             if (!input.equals(new StringBuilder(input).reverse().toString())) {
-                this.phone = new PhoneGenerator().getParam(intCode,new PhoneGenerator());
+                this.phone = new PhoneGenerator().getParam(intCode, new PhoneGenerator());
             }
             return this;
         }
