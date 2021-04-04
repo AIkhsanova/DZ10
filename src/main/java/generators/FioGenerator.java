@@ -29,7 +29,7 @@ public class FioGenerator implements Generator<Fio> {
     }
 
     @Override
-    public Fio buildResponse() {
+    public final Fio buildResponse() {
         return new Fio(lastName, firstName, middleName);
     }
 

@@ -1,6 +1,9 @@
 package person;
 
-import generators.*;
+import generators.AppearanceGenerator;
+import generators.FioGenerator;
+import generators.PhoneGenerator;
+import generators.PhysGenerator;
 import person.appearance.Appearance;
 
 public final class Person {
